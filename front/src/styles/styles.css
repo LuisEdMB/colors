@@ -1,0 +1,9 @@
+body {
+    font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    color: #4d4d4d;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-weight: 300;
+}
