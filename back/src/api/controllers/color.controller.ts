@@ -174,7 +174,7 @@ class ColorControler extends BaseController {
     /**
      * 
      * @swagger
-     * /api/colores:
+     * /api/colores/{id}:
      *   patch:
      *     summary: Update an existing color
      *     tags: [ColorControler]
@@ -214,7 +214,7 @@ class ColorControler extends BaseController {
     /**
      * 
      * @swagger
-     * /api/colores:
+     * /api/colores/{id}:
      *   delete:
      *     summary: Delete an existing color
      *     tags: [ColorControler]

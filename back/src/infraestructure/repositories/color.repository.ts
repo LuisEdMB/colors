@@ -14,7 +14,7 @@ class ColorRepository {
 
     async getById(id: string): Promise<Color> {
         const model = await ColorSchema.findOne({ _id: id })
-        if (!model) throw new ModelNotFoundException('ToDo not exists.')
+        if (!model) throw new ModelNotFoundException('Color not exists.')
         return model
     }
 
@@ -31,7 +31,7 @@ class ColorRepository {
 
     async delete(id: string): Promise<Color> {
         const model = await ColorSchema.findOne({ _id: id })
-        if (!model) throw new ModelNotFoundException('ToDo not exists.')
+        if (!model) throw new ModelNotFoundException('Color not exists.')
         model.delete()
         return model
     }
