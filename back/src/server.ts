@@ -1,4 +1,6 @@
 import 'reflect-metadata'
+import swagger from 'swagger-ui-express'
+import swaggerJsdoc from 'swagger-jsdoc'
 import express from 'express'
 import cors from 'cors'
 import { InversifyExpressServer } from 'inversify-express-utils'
@@ -13,6 +15,8 @@ import { INFRAESTRUCTURE_REGISTER_TYPES } from './infraestructure/infraestructur
 
 import MongoDatabase from './infraestructure/persistences/mongo.database'
 
+import swaggerConfig from './infraestructure/swagger/config.swagger'
+
 import DIContainer from './ioc/di.container'
 
 const config = DIContainer.get<Config>(CONFIG_REGISTER_TYPES.config)
@@ -24,6 +28,8 @@ server.setConfig((app) => {
     app.use(express.json())
     app.use(express.urlencoded({ extended: false }))
     app.use(cors())
+
+    app.use('/swagger', swagger.serve, swagger.setup(swaggerJsdoc(swaggerConfig)))
 })
 
 mongoDatabase
