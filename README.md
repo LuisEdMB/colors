@@ -28,6 +28,8 @@ Using Node.js with Express (Clean Architecture).
     npm start
     **(MongoDB is using as DATABASE, Please, install mongodb instance: https://www.mongodb.com/es)
 
+    # Docs: http://my_host:my_port/swagger
+
 Technologies:
 
     # Express.js v.4.17.3
@@ -37,3 +39,4 @@ Technologies:
     # Inversify Express Utils v.6.4.3
     # Json Web Token v.8.5.1
     # Mongoose v.6.2.4
+    # Swagger UI Express v.4.3.0
