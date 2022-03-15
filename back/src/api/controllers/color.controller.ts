@@ -55,6 +55,11 @@ import ColorService from '../../application/services/color.service'
  *           items:
  *             type: object
  *             $ref: '#/components/schemas/ColorDto'
+ *   securitySchemes:
+ *     bearerAuth:
+ *       type: http
+ *       scheme: bearer
+ *       bearerFormat: JWT
  */
 
 @controller('/api/colores')
@@ -72,6 +77,8 @@ class ColorControler extends BaseController {
      *   get:
      *     summary: Get all colors or using query parameters (?limit | ?offset)
      *     tags: [ColorControler]
+     *     security:
+     *       - bearerAuth: []
      *     parameters:
      *       - in: query
      *         name: limit
@@ -107,12 +114,14 @@ class ColorControler extends BaseController {
      *   get:
      *     summary: Get a color by id
      *     tags: [ColorControler]
+     *     security:
+     *       - bearerAuth: []
      *     parameters:
      *       - in: path
      *         name: id
      *         required: true
      *         schema:
-     *           type: integer
+     *           type: string
      *         description: Color's ID
      *     responses:
      *       200:
@@ -137,6 +146,8 @@ class ColorControler extends BaseController {
      *   post:
      *     summary: Create a new color
      *     tags: [ColorControler]
+     *     security:
+     *       - bearerAuth: []
      *     requestBody:
      *       required: true
      *       content:
@@ -167,12 +178,14 @@ class ColorControler extends BaseController {
      *   patch:
      *     summary: Update an existing color
      *     tags: [ColorControler]
+     *     security:
+     *       - bearerAuth: []
      *     parameters:
      *       - in: path
      *         name: id
      *         required: true
      *         schema:
-     *           type: integer
+     *           type: string
      *         description: Color's ID
      *     requestBody:
      *       required: true
@@ -205,12 +218,14 @@ class ColorControler extends BaseController {
      *   delete:
      *     summary: Delete an existing color
      *     tags: [ColorControler]
+     *     security:
+     *       - bearerAuth: []
      *     parameters:
      *       - in: path
      *         name: id
      *         required: true
      *         schema:
-     *           type: integer
+     *           type: string
      *         description: Color's ID
      *     responses:
      *       200:
