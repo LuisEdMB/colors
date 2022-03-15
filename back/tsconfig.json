@@ -12,7 +12,8 @@
       "es2016",
       "dom"
     ],
-    "types": ["reflect-metadata"]
+    "types": ["reflect-metadata"],
+    "resolveJsonModule": true
   },
   "exclude": ["node_modules"]
 }
